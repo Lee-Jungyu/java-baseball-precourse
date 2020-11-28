@@ -56,7 +56,7 @@ public class GameMaker {
         }
 
         for(int i = 0; i < 3; i++) {
-            inputNumberArray.add(Integer.valueOf(inputNumber.charAt(i)));
+            inputNumberArray.add(Integer.valueOf(inputNumber.substring(i, i + 1)));
         }
 
         return inputNumberArray;
