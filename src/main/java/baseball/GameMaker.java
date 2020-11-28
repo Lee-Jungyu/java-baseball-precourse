@@ -7,6 +7,22 @@ import java.util.Scanner;
 
 public class GameMaker {
 
+    public void startGame(Scanner scanner) {
+        boolean gameOver = false;
+        ArrayList<Integer> randomNumberArray = getRandomNumberArray();
+
+        while(!gameOver) {
+            ArrayList<Integer> inputNumberArray = getInputNumberArray(scanner);
+
+            int ball = getBall(randomNumberArray, inputNumberArray);
+            int strike = getStrike(randomNumberArray, inputNumberArray);
+
+            printHint(ball, strike);
+
+            gameOver = checkGameOver(strike);
+        }
+    }
+
     public ArrayList<Integer> getRandomNumberArray() {
         ArrayList<Integer> randomNumberArray = new ArrayList<>();
 
