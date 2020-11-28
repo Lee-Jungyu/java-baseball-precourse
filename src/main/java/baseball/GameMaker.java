@@ -45,4 +45,14 @@ public class GameMaker {
 
         return inputNumberArray;
     }
+
+    public int getStrike(ArrayList<Integer> randomNumberArray, ArrayList<Integer> inputNumberArray) {
+        int strike = 0;
+
+        for (int i = 0; i < 3; i++) {
+            if (randomNumberArray.get(i).equals(inputNumberArray.get(i))) strike++;
+        }
+
+        return strike;
+    }
 }
