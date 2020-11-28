@@ -55,4 +55,21 @@ public class GameMaker {
 
         return strike;
     }
+
+    public int getBall(ArrayList<Integer> randomNumberArray, ArrayList<Integer> inputNumberArray) {
+        int ball = 0;
+
+        for(int i = 0; i < 3; i++) {
+            if(randomNumberArray.get(i) != inputNumberArray.get(i) && randomNumberArray.contains(inputNumberArray.get(i))) ball++;
+        }
+
+        return ball;
+    }
+
+    public void printHint(int ball, int strike) {
+        if(ball == 0 && strike == 0) System.out.println("낫싱");
+        else if(ball > 0 && strike == 0) System.out.println(ball + "볼");
+        else if(ball == 0 && strike > 0) System.out.println(strike + "스트라이크");
+        else System.out.println(ball + "볼 " + strike + "스트라이크");
+    }
 }
